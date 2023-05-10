@@ -81,6 +81,9 @@ static bool display_on;
 
 static struct workqueue_struct *workqueue;
 
+static unsigned long boost_freq = 520000000;
+module_param(boost_freq, ulong, 0644);
+
 /*
  * Returns GPU suspend time in millisecond.
  */
