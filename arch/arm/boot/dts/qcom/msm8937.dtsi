@@ -729,29 +729,30 @@
 
 		qcom,speed0-bin-v0-cci =
 			<          0 0>,
-			<  400000000 3>,
-			<  533333333 6>;
+			<  400000000 1>,
+			<  533333333 3>;
 
 		qcom,speed1-bin-v0-c0 =
 			<          0 0>,
-			<  902400000 1>,
-			<  998400000 3>,
-			< 1094400000 5>,
-			< 1209600000 6>,
-			< 1344000000 7>;
+			<  768000000 1>,
+			<  902400000 2>,
+			<  998400000 4>,
+			< 1094400000 6>,
+			< 1209600000 7>;
 
 		qcom,speed1-bin-v0-c1 =
 			<          0 0>,
-			<  902400000 1>,
-			<  998400000 3>,
-			< 1094400000 5>,
-			< 1209600000 6>,
-			< 1344000000 7>;
+			<  960000000 1>,
+			< 1094400000 2>,
+			< 1248000000 4>,
+			< 1344000000 5>,
+			< 1401000000 6>,
+			< 1497600000 7>;
 
 		qcom,speed1-bin-v0-cci =
 			<          0 0>,
-			<  400000000 3>,
-			<  533333333 6>;
+			<  400000000 1>,
+			<  533333333 3>;
 
 		qcom,speed2-bin-v0-c0 =
 			<          0 0>,
@@ -767,8 +768,8 @@
 
 		qcom,speed2-bin-v0-cci =
 			<          0 0>,
-			<  400000000 3>,
-			<  533333333 6>;
+			<  400000000 1>,
+			<  533333333 3>;
 		#clock-cells = <1>;
 	};
 
@@ -796,8 +797,7 @@
 			 < 1248000 >,
 			 < 1344000 >,
 			 < 1401000 >,
-			 < 1497600 >,
-			 < 1536000 >;
+			 < 1497600 >;
 
 		qcom,cpufreq-table-4 =
 			 <  768000 >,
@@ -870,8 +870,7 @@
 			< 1094400  5053 >,	/* NOM   */
 			< 1248000  5712 >,	/* NOM+  */
 			< 1344000  7031 >,
-			< 1497600  7031 >,	/* TURBO */
-			< 1536000  7031 >
+			< 1497600  7031 >;	/* TURBO */
 		cpu-to-dev-map-4 =
 			<  806400  2929 >,	/* SVS  */
 			<  902400  5053 >,	/* NOM   */
@@ -886,8 +885,7 @@
 			< 1094400  400000 >,	/* NOM   */
 			< 1248000  533333 >,	/* NOM+  */
 			< 1344000  533333 >,
-			< 1497600  533333 >,	/* TURBO */
-			< 1536000  533333 >;
+			< 1497600  533333 >;	/* TURBO */
 		cpu-to-dev-map-4 =
 			<  806400  400000 >,	/* SVS  */
 			<  902400  400000 >,	/* NOM   */
@@ -899,8 +897,7 @@
 			target-dev = <&mincpubw>;
 			cpu-to-dev-map-0 =
 				< 1094400 2929 >,
-				< 1497600 4248 >,
-				< 1536000 4248 >;
+				< 1497600 4248 >;
 			cpu-to-dev-map-4 =
 				<  998400 2929 >,
 				< 1209600 4248 >;
@@ -2062,8 +2059,8 @@
 &msm_gpu {
 
 	qcom,gpu-speed-bin = <0x6018 0x80000000 31>;
-	
-	//Special features:
+
+    //Special features:
 	qcom,tsens-name = "tsens_tz_sensor10"; //enable sensor name for GPU temperature monitoring 
 	qcom,soft-start-enable = <0x1>; //enable soft start to start without current peaks that can damage device
 	qcom,hpm-enable = <0x1>; //enable high power mode
@@ -2148,10 +2145,11 @@
 
 			qcom,initial-pwrlevel = <3>;
 
+			
 			/* OVERCLOCK II */
 			qcom,gpu-pwrlevel@0 {
 				reg = <0>;
-				qcom,gpu-freq = <575000000>;
+				qcom,gpu-freq = <600000000>;
 				qcom,bus-freq = <10>;
 				qcom,bus-min = <10>;
 				qcom,bus-max = <10>;
@@ -2226,6 +2224,7 @@
 				qcom,gpu-freq = <19200000>;
 				qcom,bus-freq = <0>;
 				qcom,bus-min = <0>;
+				qcom,bus-max = <0>;
 			};
 		};
 	};
